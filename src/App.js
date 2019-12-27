@@ -11,7 +11,9 @@ class App extends Component{
        super();
        this.state = {
            monsters:[],
-           searchfield:''
+           searchfield:'',
+           title:'Monsters-Rolodex'
+          
        }
   }
   componentDidMount()
@@ -24,6 +26,8 @@ class App extends Component{
   {
       console.log(event.target.value)
       this.setState({searchfield:event.target.value})
+      this.setState({title:event.target.value})
+     
   }
   onClick =() =>
   {
@@ -31,11 +35,13 @@ class App extends Component{
   }
   render()
   {
+    
     const FilterMonsters = this.state.monsters.filter(monster=>monster.name.toLowerCase().includes(this.state.searchfield.toLowerCase()))
-      const {monsters} = this.state;
+      const {monsters,title} = this.state;
       return (
     <div className="App">
-         <h1>Monsters-Rolodex</h1>
+         <h1>{title}</h1>
+         
          <span><SearchBox onChange={this.onSearchChange} /><Button onClick={this.onClick} /></span>
         <Scroll>
            <CardList monsters={FilterMonsters}>
