@@ -2,7 +2,7 @@
   "name": "monsters-rolodex",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://techshaya.github.io/monsters",
+  "homepage": "https://techshaya.github.io/monster",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.12.0",
